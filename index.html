@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Helios Solar System Bot</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- n8n Chatbot Integration -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <style>
+      /* Hide the default n8n chat toggle button to use our custom FAB */
+      .n8n-chat-widget-launcher {
+        display: none !important;
+      }
+
+      /* Sophisticated Dark Theme for n8n Chat */
+      :root {
+        --n8n-chat-primary-color: #fdb813;
+        --n8n-chat-background-color: #0f1115;
+        --n8n-chat-text-color: #ffffff;
+        --n8n-chat-secondary-text-color: rgba(255, 255, 255, 0.6);
+        
+        /* Message Bubbles */
+        --n8n-chat-user-message-background: #fdb813;
+        --n8n-chat-user-message-color: #050608;
+        --n8n-chat-bot-message-background: rgba(255, 255, 255, 0.05);
+        --n8n-chat-bot-message-color: #ffffff;
+        
+        /* Input Area */
+        --n8n-chat-input-background: rgba(255, 255, 255, 0.03);
+        --n8n-chat-input-placeholder-color: rgba(255, 255, 255, 0.3);
+        --n8n-chat-input-border-color: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Advanced refinements for n8n components */
+      .n8n-chat-widget {
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+        backdrop-filter: blur(20px);
+      }
+      
+      .n8n-chat-widget-message-bot {
+        border: 1px solid rgba(255, 255, 255, 0.05) !important;
+      }
+    </style>
+    <script type="module">
+      import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+      window.n8nChat = createChat({
+        webhookUrl: 'https://kabeersling.app.n8n.cloud/webhook/ae495664-1cf9-416c-a05c-36fddac87de9/chat',
+        title: 'Solar Assistant',
+        subtitle: 'Ask about system performance or billing',
+        showWelcomeScreen: true
+      });
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

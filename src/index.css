@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Georgia", serif;
+  --color-solar-gold: #fdb813;
+  --color-solar-dark: #050608;
+  --color-surface: rgba(255, 255, 255, 0.03);
+  --color-border-dim: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  body {
+    @apply bg-solar-dark text-white font-sans antialiased;
+    overflow-x: hidden;
+  }
+}
+
+.sophisticated-bg {
+  background: 
+    radial-gradient(circle at 80% 20%, rgba(253, 184, 19, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(13, 30, 60, 0.2) 0%, transparent 50%);
+}
+
+.sun-orb {
+  background: radial-gradient(circle, rgba(253, 184, 19, 0.08) 0%, transparent 70%);
+}
+
+.stat-card {
+  @apply bg-surface border border-border-dim backdrop-blur-[10px] rounded-2xl;
+}
+
+.info-bubble {
+  @apply bg-white/5 border-l-2 border-solar-gold rounded-r-2xl rounded-l-sm;
+}
+
+/* n8n chat style overrides */
+:root {
+  --n8n-chat-primary-color: #fdb813;
+  --n8n-chat-background-color: #1a1c22;
+  --n8n-chat-text-color: #ffffff;
+}
